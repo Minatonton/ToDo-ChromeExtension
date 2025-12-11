@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+      'Helvetica Neue', 'Arial', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 bg-primary-light text-white rounded-md hover:opacity-90 transition-opacity;
+  }
+
+  .dark .btn-primary {
+    @apply bg-primary-dark;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 transition-colors;
+  }
+
+  .dark .btn-secondary {
+    @apply bg-gray-700 text-gray-200 hover:bg-gray-600;
+  }
+
+  .task-priority-high {
+    @apply border-l-4 border-red-500;
+  }
+
+  .task-priority-medium {
+    @apply border-l-4 border-yellow-500;
+  }
+
+  .task-priority-low {
+    @apply border-l-4 border-green-500;
+  }
+
+  .calendar-cell {
+    @apply min-h-[80px] p-1 border border-border-light hover:bg-gray-50 transition-colors cursor-pointer;
+  }
+
+  .dark .calendar-cell {
+    @apply border-border-dark hover:bg-gray-800;
+  }
+
+  .calendar-cell-today {
+    @apply bg-blue-50;
+  }
+
+  .dark .calendar-cell-today {
+    @apply bg-blue-900/20;
+  }
+
+  .calendar-cell-other-month {
+    @apply opacity-40;
+  }
+}
+
+/* スクロールバーのスタイル */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* ポップアップウィンドウのサイズ制約 */
+.popup-container {
+  width: 400px;
+  height: 600px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
